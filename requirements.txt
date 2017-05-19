@@ -1,0 +1,2 @@
+Alfred-Workflow==1.26
+unicodecsv==0.14.1
