@@ -1,1 +1,1 @@
-# alfred-airports-workflow
+# Airports Workflow ✈️ for Alfred 3
