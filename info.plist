@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>tirol.basecamp.alfredworkflow.airport-codes</string>
-	<key>category</key>
-	<string>Internet</string>
 	<key>connections</key>
 	<dict>
 		<key>85965971-40c1-4e38-9c00-a82e11c4987c</key>
@@ -52,7 +50,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Airports (v0.1.1)</string>
+	<string>Airports</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -90,6 +88,25 @@
 			<string>alfred.workflow.utility.filter</string>
 			<key>uid</key>
 			<string>F7D520C0-D374-4DCD-A3C1-E0E17D5F3B2C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>96F586F2-3410-4CF3-A296-CCDDC69CEC77</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -138,25 +155,6 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>96F586F2-3410-4CF3-A296-CCDDC69CEC77</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>Alfred workflow to get information about any airport.</string>
@@ -192,7 +190,7 @@
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.1.1</string>
+	<string>0.1.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/darkwinternight/alfred-airports-workflow</string>
 </dict>
