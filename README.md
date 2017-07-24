@@ -3,7 +3,7 @@
 [![Latest Version](https://img.shields.io/github/tag/darkwinternight/alfred-airports-workflow.svg?style=flat&label=release)](https://github.com/darkwinternight/alfred-airports-workflow/tags)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE.md)
 
-A workflow for [Alfred 3](http://www.alfredapp.com) that allows you to search for airports and display some information about them.
+A workflow for [Alfred 3](http://www.alfredapp.com) that provides quick access to information about all airports in the world.
 
 ![Search Example](resources/screencast-1-resized.gif)
 
