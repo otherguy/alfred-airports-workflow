@@ -9,9 +9,9 @@ A workflow for [Alfred 3](http://www.alfredapp.com) that provides quick access t
 
 ## Installation
 
-Download the latest version from the [Releases](https://github.com/darkwinternight/alfred-airports-workflow/releases) page and double click the downloaded file to install it.
+Download the latest version of the `airports.alfredworkflow` from the [Releases](https://github.com/darkwinternight/alfred-airports-workflow/releases) page and double click the downloaded file to install it.
 
-The workflow supports automatic updates.
+The workflow supports automatic updates and will perform daily update checks!
 
 ## Usage
 
