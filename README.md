@@ -20,10 +20,10 @@ When hitting `⏎ Return` on a selected item, the workflow tries to be helpful b
 When holding down a modifier key, the action can be specified:
 
 | Modifier | Action                                           |
-|-------------------------------------------------------------|
-| `⌥`     | Open the website of the selected airport.        |
+|----------|--------------------------------------------------|
+| `⌥`      | Open the website of the selected airport.        |
 | `ctrl`   | Open the Wikipedia page of the selected airport. |
-| `⌘`     | Show the airports location in Maps.app           |
+| `⌘`      | Show the airports location in Maps.app           |
 
 ## Developers
 
@@ -48,7 +48,10 @@ You can install `jq` from [Homebrew](https://brew.sh) and pipe the output of the
 
 ## Acknowledgements
 
-The following resources were used when creating this workflow.
+The following resources were used when creating this workflow:
 
 * The excellent [Alfred-Workflow](https://github.com/deanishe/alfred-workflow) python library by [Dean Jackson](https://github.com/deanishe).
 * The airport icon used in the workflow by [Freepik](http://www.freepik.com) and licensed under [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
+* All the airport data from [ourairports.com](http://ourairports.com/).
+
+A big ♥️ _thank you_ to all creators!
