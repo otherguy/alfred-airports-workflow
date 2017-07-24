@@ -44,6 +44,8 @@ To run the script in the terminal, simply do:
 
     $ python airports.py <search query>
 
+You can install `jq` from [Homebrew](https://brew.sh) and pipe the output of the workflow through this program to get nice formatting and the option to query the JSON.
+
 ## Acknowledgements
 
 The following resources were used when creating this workflow.
