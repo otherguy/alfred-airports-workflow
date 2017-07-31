@@ -19,7 +19,7 @@ The workflow supports automatic updates and will perform daily update checks!
 
 ## Usage
 
-When hitting `⏎ Return` on a selected item, the workflow tries to be helpful by opening either the airports website or its Wikpedia page if it has one. If it has neither a website nor an entry in Wikipedia, it opens the Apple Maps.app with the location of the airport.
+When hitting `⏎ Return` on a selected item, the workflow tries to be helpful by opening either the airports website or its Wikipedia page if it has one. If it has neither a website nor an entry in Wikipedia, it opens the Apple Maps.app with the location of the airport.
 
 When holding down a modifier key, the action can be specified:
 
