@@ -11,6 +11,11 @@ A workflow for [Alfred 3](http://www.alfredapp.com) that provides quick access t
 
 ![Search Example](resources/screencast-1-resized.gif)
 
+The latest version can be found here as well:
+
+* https://www.alfredforum.com/topic/10546-airports/
+* http://www.packal.org/workflow/airports
+
 ## Installation
 
 Download the latest version of the `airports.alfredworkflow` from the [Releases](https://github.com/darkwinternight/alfred-airports-workflow/releases) page and double click the downloaded file to install it.
