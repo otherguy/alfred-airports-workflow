@@ -6,6 +6,10 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE.md)
 [![Beerpay](https://img.shields.io/beerpay/darkwinternight/alfred-airports-workflow.svg?style=flat-square)](https://beerpay.io/darkwinternight/alfred-airports-workflow)
 
+[![Beerpay](https://img.shields.io/beerpay/darkwinternight/alfred-airports-workflow.svg?style=flat-square)](https://beerpay.io/darkwinternight/alfred-airports-workflow)
+
+[![Beerpay](https://img.shields.io/circleci/project/github/darkwinternight/alfred-airports-workflow/master.svg
+?style=flat-square)](https://beerpay.io/darkwinternight/alfred-airports-workflow)
 
 A workflow for [Alfred 3](http://www.alfredapp.com) that provides quick access to information about all airports in the world.
 
@@ -59,3 +63,9 @@ The following resources were used when creating this workflow:
 * All the airport data from [ourairports.com](http://ourairports.com/).
 
 A big ♥️ _thank you_ to all creators!
+
+## Support on Beerpay
+
+If this is useful to you in any way or you end up building it yourself, you could buy me a beer! 
+
+[![Beerpay](https://beerpay.io/darkwinternight/alfred-airports-workflow/badge.svg?style=beer-square)](https://beerpay.io/darkwinternight/alfred-airports-workflow)  [![Beerpay](https://beerpay.io/darkwinternight/alfred-airports-workflow/make-wish.svg?style=flat-square)](https://beerpay.io/darkwinternight/alfred-airports-workflow?focus=wish)
