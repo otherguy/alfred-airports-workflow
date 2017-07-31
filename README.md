@@ -5,8 +5,7 @@
 [![Issues](https://img.shields.io/github/issues/darkwinternight/alfred-airports-workflow.svg?style=flat-square)](https://github.com/darkwinternight/alfred-airports-workflow/issues)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE.md)
 [![Beerpay](https://img.shields.io/beerpay/darkwinternight/alfred-airports-workflow.svg?style=flat-square)](https://beerpay.io/darkwinternight/alfred-airports-workflow)
-[![Beerpay](https://img.shields.io/circleci/project/github/darkwinternight/alfred-airports-workflow/master.svg
-?style=flat-square)](https://circleci.com/gh/darkwinternight/alfred-airports-workflow/tree/master)
+[![Beerpay](https://img.shields.io/circleci/project/github/darkwinternight/alfred-airports-workflow/master.svg?style=flat-square)](https://circleci.com/gh/darkwinternight/alfred-airports-workflow/tree/master)
 
 A workflow for [Alfred 3](http://www.alfredapp.com) that provides quick access to information about all airports in the world.
 
