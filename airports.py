@@ -44,6 +44,7 @@ def main(wf):
             airport_city     = row['municipality'].strip()
             airport_url      = row['home_link'].strip()
             airport_wiki     = row['wikipedia_link'].strip()
+            airport_icao     = row['ident'].upper().strip()
 
             # Add a '.' after single uppercase letters
             airport_name = re.sub( r"\b([A-Z])(?![\w\-\.])", r"\1.", airport_name)
@@ -57,18 +58,18 @@ def main(wf):
             airport_country = country
 
             # Build our airport object.
-            airports.append( Map( id = airport_id, iata_code = iata_code, type = airport_type,
-                name = airport_name, coords = airport_coords, country = airport_country,
-                city = airport_city, url = airport_url, wiki = airport_wiki  ) )
+            airports.append( Map( id = airport_id, iata_code = iata_code, icao_code = airport_icao, 
+                type = airport_type, name = airport_name, coords = airport_coords, 
+                country = airport_country, city = airport_city, url = airport_url, wiki = airport_wiki ) )
 
         # Sort the list by airport_type. Snce it's only 'Large', 'Medium' and 'Small', they should be sorted correctly.
-        airports = sorted(airports, key=lambda k: k.type)
-
+        airports = sorted(airports, key=lambda k: (k.type, k.iata_code))
         return airports
 
     # Build a search key given an airport object.
     def key_for_airports(airport):
-        return '{},{},{},{}'.format(unidecode(airport.iata_code), unidecode(airport.name), unidecode(airport.country), unidecode(airport.city))
+        searchkey = '{},{},{},{},{}'.format(unidecode(airport.iata_code), unidecode(airport.name), unidecode(airport.icao_code), unidecode(airport.country), unidecode(airport.city))
+        return searchkey
 
     # ==========================================================================
     # ================================= MAIN ===================================
@@ -107,7 +108,7 @@ def main(wf):
     for airport, score, wffilter in filtered_airports:
 
         title    = '(%s) %s' % (airport.iata_code, airport.name)
-        subtitle = ('%s, %s' % (airport.city, airport.country)) if airport.city != '' else airport.country
+        subtitle = airport.icao_code + ' ' + ('(%s, %s)' % (airport.city, airport.country)) if airport.city != '' else airport.country
 
         item = wf.add_item( title, subtitle,
             autocomplete=airport.iata_code,
