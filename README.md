@@ -34,6 +34,8 @@ When holding down a modifier key, the action can be specified:
 | `ctrl`   | Open the Wikipedia page of the selected airport. |
 | `⌘`      | Show the airports location in Maps.app           |
 
+Since version `0.1.4`, you can search for ICAO codes as well!
+
 ## Developers
 
 If you want to contribute, fork this repository and submit a pull request.
