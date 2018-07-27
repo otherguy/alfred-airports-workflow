@@ -1,4 +1,4 @@
-Alfred-Workflow==1.27
+Alfred-Workflow==1.36
 unicodecsv==0.14.1
 dotmap==1.2.17
 pycountry==17.5.14
