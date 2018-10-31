@@ -20,7 +20,7 @@ The latest version can be found here as well:
 
 Download the latest version of the `airports.alfredworkflow` from the [Releases](https://github.com/otherguy/alfred-airports-workflow/releases) page and double click the downloaded file to install it.
 
-The workflow supports automatic updates and will perform daily update checks!
+The workflow supports automatic updates and will perform daily update checks.
 
 ## Usage
 
@@ -34,7 +34,7 @@ When holding down a modifier key, the action can be specified:
 | `ctrl`   | Open the Wikipedia page of the selected airport. |
 | `⌘`      | Show the airports location in Maps.app           |
 
-Since version `0.1.4`, you can search for ICAO codes as well!
+Since version `0.1.4`, you can search for ICAO codes as well.
 
 ## Developers
 
