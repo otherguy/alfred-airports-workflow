@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>tirol.basecamp.alfredworkflow.airport-codes</string>
+	<key>category</key>
+	<string>Internet</string>
 	<key>connections</key>
 	<dict>
 		<key>85965971-40c1-4e38-9c00-a82e11c4987c</key>
@@ -115,6 +117,8 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -190,8 +194,8 @@
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.1.5</string>
+	<string>0.1.6</string>
 	<key>webaddress</key>
-	<string>https://github.com/darkwinternight/alfred-airports-workflow</string>
+	<string>https://github.com/otherguy/alfred-airports-workflow</string>
 </dict>
 </plist>
