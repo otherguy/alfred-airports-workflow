@@ -11,6 +11,8 @@ def main(wf):
     import unicodecsv as csv
     from dotmap import DotMap as Map
     from cStringIO import StringIO
+    from workflow.background import run_in_background, is_running
+
     import re
 
     # Function to retrieve CSV from an URL and p
@@ -27,6 +29,7 @@ def main(wf):
 
         airports = []
 
+        # Go over each row and cache the airport data.
         for index, row in enumerate(result, start=1):
             iata_code    = row['iata_code'].upper().strip()
             airport_type = row['type'].strip()
@@ -50,15 +53,17 @@ def main(wf):
 
             country_iso_code = row['iso_country'].strip().upper()[:2]
             try :
-                country = pycountry.countries.get(alpha_2=country_iso_code).name
-            except KeyError :
+                country = pycountry.countries.get(alpha_2=country_iso_code)
+                country = country.name
+            except (KeyError, AttributeError) as err:
+                wf.logger.error("Error: {0} (Country: {1})".format(err, country_iso_code))
                 country = country_iso_code
 
             airport_country = country
 
             # Build our airport object.
-            airports.append( Map( id = airport_id, iata_code = iata_code, icao_code = airport_icao, 
-                type = airport_type, name = airport_name, coords = airport_coords, 
+            airports.append( Map( id = airport_id, iata_code = iata_code, icao_code = airport_icao,
+                type = airport_type, name = airport_name, coords = airport_coords,
                 country = airport_country, city = airport_city, url = airport_url, wiki = airport_wiki ) )
 
         # Sort the list by airport_type. Snce it's only 'Large', 'Medium' and 'Small', they should be sorted correctly.
@@ -68,23 +73,33 @@ def main(wf):
     # Build a search key given an airport object.
     def key_for_airports(airport):
         searchkey = u'{},{},{},{},{}'.format(airport.iata_code, airport.name, airport.icao_code, airport.country, airport.city)
+        wf.logger.debug('Search key: ' + searchkey)
         return searchkey
 
     # ==========================================================================
     # ================================= MAIN ===================================
     # ==========================================================================
 
+    wf.magic_prefix = 'wf:'
+
     # Get args from Workflow, already in normalized Unicode
-    args = wf.args
-
-    # Get airport argument.
-    if not len(args) >= 1 :
-        return 1
-
-    airportquery = args[0].strip()
+    if not wf.args or not len(wf.args) >= 1 : return 1
+    airportquery = u' '.join(wf.args).strip().encode('utf-8')
 
     # If no query, return.
     if not airportquery: return 1
+
+    # If '--update' is passed as parameter, update cached data.
+    if airportquery == '--update':
+        wf.logger.info('Updating airport data...')
+
+        airportdata = get_web_data()
+        wf.cache_data('airports', airportdata)
+
+        wf.logger.info('Updated airport data in cache')
+        return 0
+
+    wf.logger.info('Searching airports for \'%s\'...' % airportquery)
 
     # Update workflow if a new version is available.
     if wf.update_available == True:
@@ -92,8 +107,24 @@ def main(wf):
             autocomplete='workflow:update',
             icon=ICON_INFO)
 
-    # Get cached airports object or retrieve from URL.
-    all_airports = wf.cached_data('airports', get_web_data, max_age=60 * 60 * 24 * 30)
+    # Is cache over 10 days old or non-existent?
+    if not wf.cached_data_fresh('airports', max_age=60*60*24*10):
+        wf.logger.info('Airport data is stale, updating in the background...')
+        run_in_background('update', ['/usr/bin/env python', wf.workflowfile('airports.py'), '--update'])
+
+    if is_running('update'):
+        wf.logger.debug('Waiting for update to finish.')
+        # Rerun every 1/2 second until the `update` job is complete
+        wf.rerun = 0.5
+        # Add a notification if the script is running
+        wf.add_item('Updating airport data...', valid=False, icon=ICON_INFO)
+
+    # Get cached airports object, max_age=0 will load any cached data regardless of age
+    all_airports = wf.cached_data('airports', None, max_age=0)
+
+    if not all_airports or len(all_airports) == 0:
+        wf.send_feedback()
+        return
 
     # Find all airports that match the filter query.
     filtered_airports = wf.filter(airportquery, all_airports, key_for_airports, min_score=70, match_on=MATCH_ATOM | MATCH_SUBSTRING, include_score=True)
@@ -146,8 +177,6 @@ def main(wf):
         else :
             mod = item.add_modifier('alt', 'The %s airport has no website.' % airport.iata_code )
 
-
-
     # Send output to Alfred.
     wf.send_feedback()
 
@@ -155,8 +184,8 @@ def main(wf):
 if __name__ == '__main__':
     # Create a global `Workflow` object
     wf = Workflow(libraries=['./lib'], update_settings={
-        'github_slug': 'darkwinternight/alfred-airports-workflow',
-        'frequency': 1,
+        'github_slug': 'otherguy/alfred-airports-workflow',
+        'frequency': 1
     })
 
     # Call your entry function via `Workflow.run()` to enable its helper
