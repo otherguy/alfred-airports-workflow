@@ -10,7 +10,6 @@ def main(wf):
     import unicodedata
     import unicodecsv as csv
     from dotmap import DotMap as Map
-    from unidecode import unidecode
     from cStringIO import StringIO
     import re
 
@@ -68,7 +67,7 @@ def main(wf):
 
     # Build a search key given an airport object.
     def key_for_airports(airport):
-        searchkey = '{},{},{},{},{}'.format(unidecode(airport.iata_code), unidecode(airport.name), unidecode(airport.icao_code), unidecode(airport.country), unidecode(airport.city))
+        searchkey = u'{},{},{},{},{}'.format(airport.iata_code, airport.name, airport.icao_code, airport.country, airport.city)
         return searchkey
 
     # ==========================================================================
