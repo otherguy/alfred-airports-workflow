@@ -116,7 +116,7 @@ def main(wf):
     # Is cache over 10 days old or non-existent?
     if not wf.cached_data_fresh('airports', max_age=60*60*24*10):
         wf.logger.info('Airport data is stale, updating in the background...')
-        run_in_background('update', ['/usr/bin/env python', wf.workflowfile('airports.py'), '--update'])
+        run_in_background('update', ['/usr/bin/env', 'python', wf.workflowfile('airports.py'), '--update'])
 
     if is_running('update'):
         wf.logger.debug('Waiting for update to finish.')
