@@ -42,7 +42,6 @@ If you want to contribute, fork this repository and submit a pull request.
 
 To make the project work locally on your machine, clone the repository, go to the directory and issue the following commands:
 
-    $ pip install --target=workflow Alfred-Workflow==1.36
     $ pip install --target=lib -r requirements.txt
 
 Alternatively, if you would rather work with a virtual environment, run these commands:

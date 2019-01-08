@@ -10,6 +10,5 @@ __pycache__/
 .venv
 
 # Project specific
-/lib
-/workflow
-/Alfred_Workflow-*
+lib/*
+!lib/__init__.py

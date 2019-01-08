@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 import sys
-from workflow import Workflow3 as Workflow, ICON_WARNING, ICON_INFO, web, MATCH_ATOM, MATCH_SUBSTRING
+from lib.workflow import Workflow3 as Workflow, ICON_WARNING, ICON_INFO, web, MATCH_ATOM, MATCH_SUBSTRING
 
 def main(wf):
     # Imports go here.
