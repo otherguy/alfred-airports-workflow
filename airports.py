@@ -83,11 +83,17 @@ def main(wf):
     wf.magic_prefix = 'wf:'
 
     # Get args from Workflow, already in normalized Unicode
-    if not wf.args or not len(wf.args) >= 1 : return 1
+    if not wf.args or not len(wf.args) >= 1 :
+      wf.add_item('Searching...')
+      wf.send_feedback()
+      return 1
     airportquery = u' '.join(wf.args).strip().encode('utf-8')
 
     # If no query, return.
-    if not airportquery: return 1
+    if not airportquery or len(airportquery) <= 2 :
+      wf.add_item('Please enter 2 or more characters!')
+      wf.send_feedback()
+      return 1
 
     # If '--update' is passed as parameter, update cached data.
     if airportquery == '--update':
@@ -181,7 +187,7 @@ def main(wf):
     wf.send_feedback()
 
 
-if __name__ == '__main__':
+if __name__ == u'__main__':
     # Create a global `Workflow` object
     wf = Workflow(libraries=['./lib'], update_settings={
         'github_slug': 'otherguy/alfred-airports-workflow',
