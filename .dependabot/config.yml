@@ -1,0 +1,37 @@
+# Configuration file for dependabot.com
+# Read more: https://dependabot.com/docs/config-file/
+
+version: 1
+
+update_configs:
+
+  # Keep Python dependencies up-to-date as soon as new versions are published
+  - package_manager: "python"
+    directory: "/"
+    update_schedule: "live"
+    target_branch: "master"
+
+    # Apply default reviewer and label to created pull requests
+    default_reviewers:
+      - "otherguy"
+    default_assignees:
+      - "otherguy"
+    default_labels:
+      - "dependabot 🤖"
+      - "dependencies"
+
+  # Update your Gemfile (& lockfiles), batching Pull Requests weekly
+  - package_manager: "ruby:bundler"
+    directory: ".danger"
+    update_schedule: "weekly"
+    target_branch: "master"
+    version_requirement_updates: "increase_versions"
+
+    # Apply default reviewer and label to created pull requests
+    default_reviewers:
+      - "otherguy"
+    default_assignees:
+      - "otherguy"
+    default_labels:
+      - "dependabot 🤖"
+      - "dependencies"
