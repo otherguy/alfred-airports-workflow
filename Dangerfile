@@ -22,13 +22,10 @@ warn("Big PR, try to keep changes smaller if you can") if git.lines_of_code > 10
 commit_lint.check disable: [:subject_length]
 
 # PEP8 Linter
-pep8.lint(use_inline_comments = true)
+pep8.config_file = ".flake8"
 pep8.threshold = 10
+pep8.lint(use_inline_comments = true)
 pep8.count_errors(should_fail = true)
-
-# Code style
-code_style_validation.check validator: 'yapf',
-                            file_extensions: ['.py']
 
 # Mainly to encourage writing up some reasoning about the PR, rather than just leaving a title
 fail "Please provide a summary in the Pull Request description" if github.pr_body.length < 5 and not declared_trivial
