@@ -2,7 +2,7 @@
 
 [![Latest Version](https://img.shields.io/github/tag/otherguy/alfred-airports-workflow.svg?style=flat-square&label=release)](https://github.com/otherguy/alfred-airports-workflow/tags)
 [![Downloads](https://img.shields.io/github/downloads/otherguy/alfred-airports-workflow/total.svg?style=flat-square)](https://github.com/otherguy/alfred-airports-workflow/releases)
-[![Circle CI](https://img.shields.io/circleci/project/github/otherguy/alfred-airports-workflow/master.svg?style=flat-square)](https://circleci.com/gh/otherguy/alfred-airports-workflow/tree/master)
+[![buddy pipeline](https://app.buddy.works/basecamp/alfred-airports-workflow/pipelines/pipeline/182159/badge.svg?style=flat-square&token=5f3e3024675ba4b8ce4f11118a08d5999d1cfa2cbb5e09e60f82928a315e54cc)](https://app.buddy.works/basecamp/alfred-airports-workflow/pipelines/pipeline/182159)
 [![Issues](https://img.shields.io/github/issues/otherguy/alfred-airports-workflow.svg?style=flat-square)](https://github.com/otherguy/alfred-airports-workflow/issues)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE.md)
 [![Beerpay](https://img.shields.io/beerpay/otherguy/alfred-airports-workflow.svg?style=flat-square)](https://beerpay.io/otherguy/alfred-airports-workflow)
