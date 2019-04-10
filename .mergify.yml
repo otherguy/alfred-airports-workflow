@@ -5,7 +5,7 @@ pull_request_rules:
     conditions:
       - status-success=buddy/pipeline/Build & Test
       - "#approved-reviews-by>=1"
-	  - base=master
+      - base=master
     actions:
       merge:
         method: squash
@@ -32,3 +32,5 @@ pull_request_rules:
       - base=master
     actions:
       dismiss_reviews:
+        approved: True
+        changes_requested: True
