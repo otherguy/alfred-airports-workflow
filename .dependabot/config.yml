@@ -22,7 +22,7 @@ update_configs:
 
   # Update your Gemfile (& lockfiles), batching Pull Requests weekly
   - package_manager: "ruby:bundler"
-    directory: ".danger"
+    directory: "/"
     update_schedule: "weekly"
     target_branch: "master"
     version_requirement_updates: "increase_versions"
