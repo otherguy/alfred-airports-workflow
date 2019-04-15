@@ -22,7 +22,7 @@ warn("Big PR, try to keep changes smaller if you can") if git.lines_of_code > 10
 commit_lint.check disable: [:subject_length]
 
 # PEP8 Linter
-#pep8.config_file = "./.flake8"
+pep8.config_file = ".flake8"
 pep8.threshold = 10
 pep8.lint(use_inline_comments = true)
 pep8.count_errors(should_fail = true)
