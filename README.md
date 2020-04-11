@@ -5,7 +5,6 @@
 [![buddy pipeline](https://app.buddy.works/basecamp/alfred-airports-workflow/pipelines/pipeline/182159/badge.svg?style=flat-square&token=5f3e3024675ba4b8ce4f11118a08d5999d1cfa2cbb5e09e60f82928a315e54cc)](https://app.buddy.works/basecamp/alfred-airports-workflow/pipelines/pipeline/182159)
 [![Issues](https://img.shields.io/github/issues/otherguy/alfred-airports-workflow.svg?style=flat-square)](https://github.com/otherguy/alfred-airports-workflow/issues)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE.md)
-[![Beerpay](https://img.shields.io/beerpay/otherguy/alfred-airports-workflow.svg?style=flat-square)](https://beerpay.io/otherguy/alfred-airports-workflow)
 
 A workflow for [Alfred 3](http://www.alfredapp.com) that provides quick access to information about all airports in the world.
 
@@ -65,9 +64,3 @@ The following resources were used when creating this workflow:
 * All the airport data from [ourairports.com](http://ourairports.com/).
 
 A big ♥️ _thank you_ to all creators!
-
-## Support Me
-
-If this is useful to you in any way, you could buy me a beer 🍺! 
-
-[![Beerpay](https://beerpay.io/otherguy/alfred-airports-workflow/badge.svg?style=beer-square)](https://beerpay.io/otherguy/alfred-airports-workflow)  [![Beerpay](https://beerpay.io/otherguy/alfred-airports-workflow/make-wish.svg?style=flat-square)](https://beerpay.io/otherguy/alfred-airports-workflow?focus=wish)
