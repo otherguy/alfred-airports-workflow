@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.6.2'
 
 # Read more: https://danger.systems/ruby/
-gem 'danger', :github => 'otherguy/danger', :branch => 'master'
+gem 'danger'
 gem 'danger-pep8',                 '~> 0.0.5'
 gem 'danger-auto_label',           '~> 1.3.1'
 gem 'danger-commit_lint',          '~> 0.0.7'
